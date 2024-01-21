@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "vzcJNCZUrVQx8kGpqIoGs7OqQ/R2oXkGJo8DDcWIm68=",
+  "Source": "Healthy.WebAPI",
+  "BasePath": "_content/Healthy.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

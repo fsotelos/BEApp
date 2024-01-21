@@ -1,0 +1,36 @@
+﻿<!-- Shared/RadioGroup.razor -->
+@using Healthy.Domain.Enums
+@inherits InputBase<Gender>
+
+@foreach (var value in Enum.GetValues(typeof(Gender)).Cast<Gender>())
+{
+    <label>
+        <input type="radio" value="@value" checked="@IsOptionSelected(value)" @onchange="Change" />
+        @value.ToString()
+    </label>
+}
+
+@code {
+    [Parameter] public EventCallback<Gender> OnChange { get; set; }
+
+    private bool IsOptionSelected(Gender value) => value.Equals(CurrentValue);
+
+    private async Task Change(ChangeEventArgs e)
+    {
+        var selectedValue = (Gender)Enum.Parse(typeof(Gender), e.Value.ToString());
+        CurrentValue = selectedValue;
+        await OnChange.InvokeAsync(selectedValue);
+    }
+
+    protected override bool TryParseValueFromString(string value, out Gender result, out string validationErrorMessage)
+    {
+        if (Enum.TryParse(value, out result))
+        {
+            validationErrorMessage = null;
+            return true;
+        }
+
+        validationErrorMessage = $"No se pudo convertir el valor '{value}' al tipo {typeof(Gender).FullName}.";
+        return false;
+    }
+}

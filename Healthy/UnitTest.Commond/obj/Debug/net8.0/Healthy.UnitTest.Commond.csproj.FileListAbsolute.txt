@@ -1,0 +1,17 @@
+C:\Healthy\UnitTest.Commond\bin\Debug\net8.0\Healthy.UnitTest.Commond.deps.json
+C:\Healthy\UnitTest.Commond\bin\Debug\net8.0\Healthy.UnitTest.Commond.dll
+C:\Healthy\UnitTest.Commond\bin\Debug\net8.0\Healthy.UnitTest.Commond.pdb
+C:\Healthy\UnitTest.Commond\bin\Debug\net8.0\Healthy.Domain.dll
+C:\Healthy\UnitTest.Commond\bin\Debug\net8.0\Healthy.Infraestructure.dll
+C:\Healthy\UnitTest.Commond\bin\Debug\net8.0\Healthy.Infraestructure.pdb
+C:\Healthy\UnitTest.Commond\bin\Debug\net8.0\Healthy.Domain.pdb
+C:\Healthy\UnitTest.Commond\obj\Debug\net8.0\Healthy.UnitTest.Commond.csproj.AssemblyReference.cache
+C:\Healthy\UnitTest.Commond\obj\Debug\net8.0\Healthy.UnitTest.Commond.GeneratedMSBuildEditorConfig.editorconfig
+C:\Healthy\UnitTest.Commond\obj\Debug\net8.0\Healthy.UnitTest.Commond.AssemblyInfoInputs.cache
+C:\Healthy\UnitTest.Commond\obj\Debug\net8.0\Healthy.UnitTest.Commond.AssemblyInfo.cs
+C:\Healthy\UnitTest.Commond\obj\Debug\net8.0\Healthy.UnitTest.Commond.csproj.CoreCompileInputs.cache
+C:\Healthy\UnitTest.Commond\obj\Debug\net8.0\Healthy.UnitTest.Commond.csproj.CopyComplete
+C:\Healthy\UnitTest.Commond\obj\Debug\net8.0\Healthy.UnitTest.Commond.dll
+C:\Healthy\UnitTest.Commond\obj\Debug\net8.0\refint\Healthy.UnitTest.Commond.dll
+C:\Healthy\UnitTest.Commond\obj\Debug\net8.0\Healthy.UnitTest.Commond.pdb
+C:\Healthy\UnitTest.Commond\obj\Debug\net8.0\ref\Healthy.UnitTest.Commond.dll

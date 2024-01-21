@@ -1,0 +1,17 @@
+C:\Healthy\Healthy.Infraestructure\bin\Release\net8.0\Healthy.Infraestructure.deps.json
+C:\Healthy\Healthy.Infraestructure\bin\Release\net8.0\Healthy.Infraestructure.runtimeconfig.json
+C:\Healthy\Healthy.Infraestructure\bin\Release\net8.0\Healthy.Infraestructure.dll
+C:\Healthy\Healthy.Infraestructure\bin\Release\net8.0\Healthy.Infraestructure.pdb
+C:\Healthy\Healthy.Infraestructure\bin\Release\net8.0\Healthy.Domain.dll
+C:\Healthy\Healthy.Infraestructure\bin\Release\net8.0\Healthy.Domain.pdb
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\Healthy.Infraestructure.csproj.AssemblyReference.cache
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\Healthy.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\Healthy.Infraestructure.AssemblyInfoInputs.cache
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\Healthy.Infraestructure.AssemblyInfo.cs
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\Healthy.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\Healthy.Infraestructure.csproj.CopyComplete
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\Healthy.Infraestructure.dll
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\refint\Healthy.Infraestructure.dll
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\Healthy.Infraestructure.pdb
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\Healthy.Infraestructure.genruntimeconfig.cache
+C:\Healthy\Healthy.Infraestructure\obj\Release\net8.0\ref\Healthy.Infraestructure.dll

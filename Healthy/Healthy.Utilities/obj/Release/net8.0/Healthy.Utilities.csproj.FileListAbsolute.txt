@@ -1,0 +1,11 @@
+C:\Healthy\Healthy.Utilities\bin\Release\net8.0\Healthy.Utilities.deps.json
+C:\Healthy\Healthy.Utilities\bin\Release\net8.0\Healthy.Utilities.dll
+C:\Healthy\Healthy.Utilities\bin\Release\net8.0\Healthy.Utilities.pdb
+C:\Healthy\Healthy.Utilities\obj\Release\net8.0\Healthy.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Healthy\Healthy.Utilities\obj\Release\net8.0\Healthy.Utilities.AssemblyInfoInputs.cache
+C:\Healthy\Healthy.Utilities\obj\Release\net8.0\Healthy.Utilities.AssemblyInfo.cs
+C:\Healthy\Healthy.Utilities\obj\Release\net8.0\Healthy.Utilities.csproj.CoreCompileInputs.cache
+C:\Healthy\Healthy.Utilities\obj\Release\net8.0\Healthy.Utilities.dll
+C:\Healthy\Healthy.Utilities\obj\Release\net8.0\refint\Healthy.Utilities.dll
+C:\Healthy\Healthy.Utilities\obj\Release\net8.0\Healthy.Utilities.pdb
+C:\Healthy\Healthy.Utilities\obj\Release\net8.0\ref\Healthy.Utilities.dll

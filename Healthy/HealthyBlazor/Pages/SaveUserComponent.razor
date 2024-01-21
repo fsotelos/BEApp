@@ -1,0 +1,186 @@
+﻿@page "/saveUser"
+@page "/saveUser/{IdUser}"
+@using Healthy.Domain.Enums
+@using HealthyBlazor.Model
+@using HealthyBlazor.Services
+@using CurrieTechnologies.Razor.SweetAlert2
+@using Shared
+
+@inject NavigationManager NavigationManager
+@inject IUserService _userService
+@inject SweetAlertService Swal
+<h3>SaveUserComponent</h3>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card p-4">
+                <div class="card-header">
+                    <h4>User</h4>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- First column -->
+                            <div class="user-details">
+                                <div class="form-group">
+                                    <input type="hidden" v-model="user.id" />
+                                    <label for="FirstName">First Name</label>
+                                    <input tabindex="1" class="form-control" type="text" @bind="user.FirstName"
+                                           required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="LastFirstName">First Last Name</label>
+                                    <input tabindex="3" class="form-control" type="text" @bind="user.LastFirstName"
+                                           required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="NickName">Username</label>
+                                    <input tabindex="5" class="form-control" type="text" @bind="user.NickName"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="BirthDayDate">BirthDay</label>
+                                    <input tabindex="7" class="form-control" type="date" @bind="user.BirthDayDate"
+                                           required />
+
+                                </div>
+                                @if (user.Id == 0)
+                                {
+                                    <div class="form-group" v-if="user.id == 0">
+                                        <label for="Password">Password</label>
+                                        <input tabindex="9" class="form-control" type="password" @bind="user.Password"
+                                               required>
+                                    </div>
+                                }
+                                <div v-else>
+                                    <input type="hidden" @bind="user.Password" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Second column -->
+                            <div class="user-details">
+                                <div class="form-group">
+                                    <label for="SecondName">Second Name</label>
+                                    <input tabindex="2" class="form-control" type="text" @bind="user.SecondName"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="LastSecondName">Second Last Name</label>
+                                    <input tabindex="4" class="form-control" type="text" @bind="user.LastSecondName"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Email">Email</label>
+                                    <input tabindex="6" class="form-control" type="email" @bind="user.Email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="PhoneNumber">Phone Number</label>
+                                    <input tabindex="8" class="form-control" type="text" @bind="user.PhoneNumber"
+                                           required>
+                                </div>
+                                @if (user.Id == 0)
+                                {
+                                    <div class="form-group">
+                                        <label for="ConfirmPassword">Confirm Password</label>
+                                        <input tabindex="10" class="form-control" type="password"
+                                               @bind="user.ConfirmPassword" required>
+                                    </div>
+                                }
+                                <div>
+                                    <input type="hidden" @bind="user.Password" />
+                                </div>
+                            </div>
+                        </div>
+                        @if (passwordError)
+                        {
+                            <div class="alert-danger">
+                                Error al confirmar password
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Gender details -->
+                    <div class="form-group">
+                        <label for="Gender">Gender</label><br/>
+                        <InputRadioGroup @bind-Value="user.Gender">
+
+                            @foreach (var item in Enum.GetValues(typeof(Gender)).Cast<Gender>())
+                            {
+                                <InputRadio Value="item"></InputRadio>
+                                @item
+                            }
+                        </InputRadioGroup>
+                    </div>
+                   
+
+                    <div class="button mt-3">
+                        @if (user.Id == 0)
+                        {
+                            <input type="button" class="btn btn-primary" @onclick="SaveUser"
+                                   value="Register">
+                        }
+                        else
+                        {
+                            <input type="button" class="btn btn-success" @onclick="SaveUser" value="Edit">
+                        }
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    User user = null;
+    bool passwordError = false;
+
+    [Parameter]
+    public string? IdUser { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = new User();
+        
+        if (int.TryParse(IdUser, out int getId))
+        {
+            if (getId > 0)
+            {
+                user = await _userService.GetUserById(getId);
+            }
+        }
+        else
+        {
+            user.Gender = Healthy.Domain.Enums.Gender.Male;
+        }
+    }
+
+    protected async Task SaveUser()
+    {
+        if (user.Id == 0)
+        {
+            passwordError = false;
+            if (user.Password != user.ConfirmPassword)
+            {
+                passwordError = true;
+                return;
+            }
+        }
+        
+        if (user.Id == 0)
+            await _userService.AddUser(user);
+        else
+            await _userService.EditUser(user);
+
+
+        await Swal.FireAsync("Save User", "The user was saved successful!", SweetAlertIcon.Success);
+
+        NavigationManager.NavigateTo("/users");
+
+    }
+}

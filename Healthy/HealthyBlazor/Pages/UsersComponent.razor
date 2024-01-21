@@ -1,0 +1,100 @@
+﻿@page "/users"
+@using HealthyBlazor.Services
+@using HealthyBlazor.Model
+@using CurrieTechnologies.Razor.SweetAlert2
+@inject IUserService _userService
+@inject NavigationManager NavigationManager
+@inject SweetAlertService Swal
+<h3>Users</h3>
+
+@if (users == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Second Name</th>
+                <th>Last First Name</th>
+                <th>Last Second Name</th>
+                <th>Nick Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>
+                    <button class="btn btn-primary" @onclick='() => NavigationManager.NavigateTo("saveUser")'>Add</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in users)
+            {
+                <tr>
+                    <td>@user.FirstName</td>
+                    <td>@user.SecondName</td>
+                    <td>@user.LastFirstName</td>
+                    <td>@user.LastSecondName</td>
+                    <td>@user.NickName</td>
+                    <td>@user.Email</td>
+                    <td>@user.PhoneNumber</td>
+                    <td>
+                        <button class="btn btn-success" @onclick='() => NavigationManager.NavigateTo("saveUser/" + user.Id)'>Edit</button>
+                        <button class="btn btn-danger" @onclick='() => DeleteUser(user.Id)'>Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@code {
+    List<User> users = null;
+    bool visible = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadUsers();
+    }
+
+    async Task LoadUsers()
+    {
+        users = await _userService.GetAllUsers();
+    }
+
+    async Task DeleteUser(int userId)
+    {
+        await Swal.FireAsync(new SweetAlertOptions
+            {
+                Title = "Are you sure?",
+                Text = "You will not be able to recover information of user!",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Yes, delete it!",
+                CancelButtonText = "No, keep it"
+            }).ContinueWith(swalTask =>
+                {
+                    SweetAlertResult result = swalTask.Result;
+                    if (!string.IsNullOrEmpty(result.Value))
+                    {
+                        try
+                        {
+                            _userService.DeleteUser(userId);
+                            Swal.FireAsync("Delete User", "The user was removed successfuly!", SweetAlertIcon.Success);
+                            users = users.Where(x => x.Id != userId).ToList();
+                        }
+                        catch (Exception)
+                        {
+
+                            throw;
+                        }
+                    }
+                });
+
+
+
+    }
+}

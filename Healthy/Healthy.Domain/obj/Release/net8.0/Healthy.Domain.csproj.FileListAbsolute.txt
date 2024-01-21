@@ -1,0 +1,12 @@
+C:\Healthy\Healthy.Domain\bin\Release\net8.0\Healthy.Domain.deps.json
+C:\Healthy\Healthy.Domain\bin\Release\net8.0\Healthy.Domain.dll
+C:\Healthy\Healthy.Domain\bin\Release\net8.0\Healthy.Domain.pdb
+C:\Healthy\Healthy.Domain\obj\Release\net8.0\Healthy.Domain.csproj.AssemblyReference.cache
+C:\Healthy\Healthy.Domain\obj\Release\net8.0\Healthy.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Healthy\Healthy.Domain\obj\Release\net8.0\Healthy.Domain.AssemblyInfoInputs.cache
+C:\Healthy\Healthy.Domain\obj\Release\net8.0\Healthy.Domain.AssemblyInfo.cs
+C:\Healthy\Healthy.Domain\obj\Release\net8.0\Healthy.Domain.csproj.CoreCompileInputs.cache
+C:\Healthy\Healthy.Domain\obj\Release\net8.0\Healthy.Domain.dll
+C:\Healthy\Healthy.Domain\obj\Release\net8.0\refint\Healthy.Domain.dll
+C:\Healthy\Healthy.Domain\obj\Release\net8.0\Healthy.Domain.pdb
+C:\Healthy\Healthy.Domain\obj\Release\net8.0\ref\Healthy.Domain.dll
